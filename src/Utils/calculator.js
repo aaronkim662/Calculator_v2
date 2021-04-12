@@ -84,3 +84,20 @@ const formatParens = (calcInput = []) => {
   return calcInput
 }
 
+const formatNegative = (calcInput = []) => {
+  for(let i = 0; i < calcInput.length; i++){
+    if(calcInput[i] === '-' && typeof parseInt(calcInput[i+1]) === 'number'){
+      calcInput.splice(i, 2, `-${calcInput[i+1]}`)
+    }
+  }
+
+  for(let i = 0; i < calcInput.length; i++){
+    if(typeof parseInt(calcInput[i]) === 'number' && Math.sign(parseInt(calcInput[i+1])) === -1){
+      calcInput.splice(i+1, 0, '+')
+      i++
+    }
+  }
+
+  return calcInput
+}
+
