@@ -28,6 +28,12 @@ const App = () => {
     }
   }
 
+  const calculate = (calcInput) => {
+    setClearInput({reset:true})
+    let data = Calculator(calcInput);
+    setInput({input: data});
+    return data
+  }
 
   const onDigitClick = (value) => {
     setInput(value)
