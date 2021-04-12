@@ -4,7 +4,14 @@ import Calculator from './Utils/calculator';
 import CalculatorCell from './App/SharedComponents/CalculatorCell/CalculatorCell';
 
 const App = () => {
-  let [input, setInput] = React.useState()
+  const [input, setInput] = React.useState({
+    input: ''
+  })
+
+  const [clearInput, setClearInput] = React.useState({
+    reset: false
+  })
+
 
   const onDigitClick = (value) => {
     setInput(value)
