@@ -92,7 +92,7 @@ const formatNegative = (calcInput = []) => {
   }
 
   for(let i = 0; i < calcInput.length; i++){
-    if(typeof parseInt(calcInput[i]) === 'number' && Math.sign(parseInt(calcInput[i+1])) === -1){
+    if(typeof parseInt(calcInput[i]) === 'number' && Math.sign(parseInt(calcInput[i+1])) === -1 && calcInput[i] !== '(' && calcInput[i] !== ')'){
       calcInput.splice(i+1, 0, '+')
       i++
     }
