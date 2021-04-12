@@ -61,13 +61,13 @@ const App = () => {
   return (
     <div className="App">
       <div>Calculator</div>
-      <input></input>
+      <input value = {input.input} type = 'text' onChange={handleChange} onKeyDown={handleKeyDown} placeholder='0'/>
       <div className = 'Calculator'>
         {cells(['(', ')', '' , 'AC'])}
-        {cells([7,8,9, '/'])}
-        {cells([4,5,6, '*'])}
-        {cells([1,2,3, '-'])}
-        {cells([0,'.','=', '+'])}
+        {cells(['7', '8', '9', '/'])}
+        {cells(['4', '5', '6', '*'])}
+        {cells(['1', '2', '3', '-'])}
+        {cells(['0', '.', '=', '+'])}
       </div>
     </div>
   );
