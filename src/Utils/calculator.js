@@ -166,6 +166,9 @@ const pemdas = (calcArray = [], ) => {
 // have functions for + - * /
 
 const calculator = (input = '') => {
+  if(input === ''){
+    return ''
+  }
   const parenthesis = ['(', ')'];
   let invalidInput = checkEdgeCases(input);
   let newInput = [];
