@@ -73,3 +73,14 @@ const splitElements = (calcInput = '') => {
 // splitElements("(9/3)*2*5/10")
 // splitElements('90/3*2+10*2-0*')
 
+const formatParens = (calcInput = []) => {
+  const parenthesis = [')', '(']
+  for(let i = 0; i < calcInput.length; i++){
+    if(calcInput[i] === parenthesis[0] && calcInput[i+1] === parenthesis[1]){
+      calcInput.splice(i+ 1, 0, '*')
+      i++
+    }
+  }
+  return calcInput
+}
+
