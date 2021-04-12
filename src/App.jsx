@@ -35,9 +35,17 @@ const App = () => {
     return data
   }
 
-  const onDigitClick = (value) => {
-    setInput(value)
-    console.log(value)
+  const handleKeyDown = (event) => {
+    if(event.key === 'Enter'){
+      calculate(input.input)
+    }
+  }
+
+  const handleChange = (event) => {
+    event.preventDefault();
+    setInput(
+      {input: event.target.value}
+    )
   }
 
   const cells = (row) => {
