@@ -205,3 +205,16 @@ const calculator = (input = '') => {
   return calculation;
 }
 
+// make a function for add/subtract multiply/divide
+// calculator('(10-5)')
+// calculator("1 + 2.5 * 30") // 76
+// calculator("1 + 34.2 / 2") // 18.1
+// calculator("(4-2)*3.5 * (10 - 5)") // 35
+// calculator("4*5/2") // 10
+calculator("9/3*2*5/10") // 3
+// calculator('(9+3)(-10*2)') // 240
+// calculator("-5+-8--11*2") // 9
+// calculator("2+-+-4") //Invalid or Syntax Error
+// calculator("19 + cinnamon") //Invalid or Syntax Error
+
+// export default calculator;
