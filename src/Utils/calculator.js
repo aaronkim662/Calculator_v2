@@ -70,3 +70,6 @@ const splitElements = (calcInput = '') => {
   return newCalcInput
 
 }
+// splitElements("(9/3)*2*5/10")
+// splitElements('90/3*2+10*2-0*')
+
