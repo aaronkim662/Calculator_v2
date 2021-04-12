@@ -1,6 +1,6 @@
 const checkEdgeCases = (calcCheck = '') =>  {
   const alphabet = 'abcdefghijklmnopqrstuvwxyz';
-  const edgeCases = ['++', '+/', '/+', '+*', '*+', '-*', '-/', '**', '*/', '/*', '**', '//', '-+'];
+  const edgeCases = ['++', '+/', '/+', '+*', '*+', '-*', '-/', '**', '*/', '/*', '**', '//', '-+', '..'];
   const operations = ['+', '/', '*'];
   // check for single parenthesis
   if(calcCheck.includes('(') && !calcCheck.includes(')')){
@@ -220,4 +220,4 @@ const calculator = (input = '') => {
 // calculator("2+-+-4") //Invalid or Syntax Error
 // calculator("19 + cinnamon") //Invalid or Syntax Error
 
-// export default calculator;
+export default calculator;
