@@ -1,4 +1,5 @@
 import React from 'react';
+import './CalculatorCell.css'
 
 const CalculatorCell = (props) => {
   const [digit, setDigit] = React.useState({
