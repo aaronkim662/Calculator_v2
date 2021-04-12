@@ -32,3 +32,41 @@ const checkEdgeCases = (calcCheck = '') =>  {
   }
   return true
 }
+
+const splitElements = (calcInput = '') => {
+  let digits = '0123456789.';
+  let newCalcInput = [];
+  let start = 0;
+  let digitStr = '';
+  let splitInput = '';
+
+  if(calcInput.includes(' ')){
+    splitInput = calcInput.split(' ').join('');
+  }else{
+    splitInput = calcInput;
+  }
+
+  for(let i = 0; i < splitInput.length; i++){
+    if(digits.includes(splitInput[i])){
+      digitStr += splitInput[i];
+    }else{
+      newCalcInput.push(digitStr);
+      newCalcInput.push(splitInput[i]);
+      start = i;
+      digitStr = '';
+    }
+  }
+  // push remaining digits
+  if(start + 1 < splitInput.length){
+    newCalcInput.push(splitInput.substring(start + 1, splitInput.length))
+  }
+
+  // clear ''
+  for(let i = 0; i < newCalcInput.length; i++){
+    if(newCalcInput[i] === ''){
+      newCalcInput.splice(i,1);
+    }
+  };
+  return newCalcInput
+
+}
