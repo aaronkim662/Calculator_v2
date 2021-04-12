@@ -118,3 +118,40 @@ const operations = (operator = '', firstInput = '', secondInput = '') => {
   }
 }
 
+const pemdas = (calcArray = [], ) => {
+  const typesOperations = ['*', '/', '+', '-'];
+  if(calcArray.includes(typesOperations[0]) || calcArray.includes(typesOperations[1])){
+    for(let i = 0; i < calcArray.length; i++){
+      if(calcArray[i] === typesOperations[0]){
+        let value = operations('*', calcArray[i - 1], calcArray[i +1]);
+        calcArray.splice(i - 1, 3, value);
+        i = 0;
+      }else if(calcArray[i] === typesOperations[1]){
+        let value = operations('/', calcArray[i - 1], calcArray[i +1]);
+        calcArray.splice(i - 1, 3, value);
+        i = 0;
+      }
+
+    }
+  }
+
+  if(calcArray.includes(typesOperations[2]) || calcArray.includes(typesOperations[3])){
+    for(let i = 0; i < calcArray.length; i++){
+      if(calcArray[i] === typesOperations[2]){
+        let value = operations('+', calcArray[i - 1], calcArray[i +1]);
+        calcArray.splice(i - 1, 3, value);
+        i = 0;
+      }else if(calcArray[i] === typesOperations[3]){
+        let value = operations('-', calcArray[i - 1], calcArray[i +1]);
+        calcArray.splice(i - 1, 3, value);
+        i = 0;
+      }
+
+      if(!calcArray.includes(typesOperations[2]) && !calcArray.includes(typesOperations[3])){
+        i = calcArray.length;
+      }
+    }
+  }
+  return calcArray[0];
+};
+
