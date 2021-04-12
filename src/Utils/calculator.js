@@ -1,3 +1,5 @@
+// There are only two console logs in this file and they are meant for testing purposes.
+// If these edge cases are met then return false, if not then return true
 const checkEdgeCases = (calcCheck = '') =>  {
   const alphabet = 'abcdefghijklmnopqrstuvwxyz';
   const edgeCases = ['++', '+/', '/+', '+*', '*+', '-*', '-/', '**', '*/', '/*', '**', '//', '-+', '..'];
@@ -23,7 +25,7 @@ const checkEdgeCases = (calcCheck = '') =>  {
     };
   };
 
-  // check for operations at the start and end oof string
+  // check for operations at the start and end of string
   // a negavtive string is acceptable only at the beginning
   for(let i = 0; i < operations.length; i++){
     if(calcCheck[calcCheck.length - 1] === '-' || calcCheck[0] === operations[i] || calcCheck[calcCheck.length -1] === operations[i]){
@@ -33,6 +35,10 @@ const checkEdgeCases = (calcCheck = '') =>  {
   return true
 }
 
+// checkEdgeCases('..5+2') // False
+// checkEdgeCases('5+2 ** 7') // False
+
+// Split elements into an array
 const splitElements = (calcInput = '') => {
   let digits = '0123456789.';
   let newCalcInput = [];
@@ -40,6 +46,7 @@ const splitElements = (calcInput = '') => {
   let digitStr = '';
   let splitInput = '';
 
+  // check for spaces and compress the string
   if(calcInput.includes(' ')){
     splitInput = calcInput.split(' ').join('');
   }else{
@@ -47,16 +54,21 @@ const splitElements = (calcInput = '') => {
   }
 
   for(let i = 0; i < splitInput.length; i++){
+    // If the value of string is a stringed digit
+    // Stack the values until it is not
     if(digits.includes(splitInput[i])){
       digitStr += splitInput[i];
     }else{
+      // If the value is not then push the value
+      // Also since we know its not a stringed digit it must either be a parenthesis or an operation
       newCalcInput.push(digitStr);
       newCalcInput.push(splitInput[i]);
       start = i;
       digitStr = '';
     }
   }
-  // push remaining digits
+  // The previous loop will only push if the value is not a stringed digit
+  // Push the remaining digits
   if(start + 1 < splitInput.length){
     newCalcInput.push(splitInput.substring(start + 1, splitInput.length))
   }
@@ -70,9 +82,10 @@ const splitElements = (calcInput = '') => {
   return newCalcInput
 
 }
-// splitElements("(9/3)*2*5/10")
-// splitElements('90/3*2+10*2-0*')
 
+// splitElements("(9/3)*2*5/10") // ['(', '9', '/', '3', ')', '*', '2','*', '5', '/', '10']
+
+// Format
 const formatParens = (calcInput = []) => {
   const parenthesis = [')', '(']
   for(let i = 0; i < calcInput.length; i++){
@@ -84,13 +97,15 @@ const formatParens = (calcInput = []) => {
   return calcInput
 }
 
+// Format negative numbers by prepending them next to the following number
 const formatNegative = (calcInput = []) => {
   for(let i = 0; i < calcInput.length; i++){
-    if(calcInput[i] === '-' && typeof parseInt(calcInput[i+1]) === 'number'){
+    if(calcInput[i] === '-' && !isNaN(parseInt(calcInput[i+1])) && typeof parseInt(calcInput[i+1]) === 'number'){
       calcInput.splice(i, 2, `-${calcInput[i+1]}`)
     }
   }
 
+  // Insert a '+' if there is a number and the next value is a negative number
   for(let i = 0; i < calcInput.length; i++){
     if(typeof parseInt(calcInput[i]) === 'number' && Math.sign(parseInt(calcInput[i+1])) === -1 && !isNaN(parseInt(calcInput[i]))){
       calcInput.splice(i+1, 0, '+')
@@ -101,6 +116,7 @@ const formatNegative = (calcInput = []) => {
   return calcInput
 }
 
+// In this function, pass in operation and numbers to solve
 const operations = (operator = '', firstInput = '', secondInput = '') => {
   let num1 = parseFloat(firstInput)
   let num2 = parseFloat(secondInput)
@@ -118,8 +134,11 @@ const operations = (operator = '', firstInput = '', secondInput = '') => {
   }
 }
 
+// This function does pemdas
 const pemdas = (calcArray = [], ) => {
   const typesOperations = ['*', '/', '+', '-'];
+  // Check for '*' and '/' and pass it into operations
+  // Then replace the two numbers and operation; insert the value
   if(calcArray.includes(typesOperations[0]) || calcArray.includes(typesOperations[1])){
     for(let i = 0; i < calcArray.length; i++){
       if(calcArray[i] === typesOperations[0]){
@@ -135,6 +154,7 @@ const pemdas = (calcArray = [], ) => {
     }
   }
 
+  // Check for '+' and '-' pass into operations
   if(calcArray.includes(typesOperations[2]) || calcArray.includes(typesOperations[3])){
     for(let i = 0; i < calcArray.length; i++){
       if(calcArray[i] === typesOperations[2]){
@@ -155,19 +175,9 @@ const pemdas = (calcArray = [], ) => {
   return calcArray[0];
 };
 
-// do a loop
-// find the ele
-// save the index
-// insert
-
-// be able to do simple operations first
-// check for parenthesis
-// so use operations
-// have functions for + - * /
-
 const calculator = (input = '') => {
   if(input === ''){
-    return ''
+    return '';
   }
   const parenthesis = ['(', ')'];
   let invalidInput = checkEdgeCases(input);
@@ -208,7 +218,7 @@ const calculator = (input = '') => {
   return calculation;
 }
 
-// make a function for add/subtract multiply/divide
+// comment/uncomment out below to test
 // calculator('(10-5)')
 // calculator("1 + 2.5 * 30") // 76
 // calculator("1 + 34.2 / 2") // 18.1
@@ -220,4 +230,5 @@ const calculator = (input = '') => {
 // calculator("2+-+-4") //Invalid or Syntax Error
 // calculator("19 + cinnamon") //Invalid or Syntax Error
 
+// comment out code below to run this as its own
 export default calculator;
