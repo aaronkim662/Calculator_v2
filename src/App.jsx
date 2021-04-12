@@ -50,8 +50,9 @@ const App = () => {
 
   const cells = (row) => {
     const list = row.map((number) =>
-      <CalculatorCell digit={number} key = {'Cell_' +number} onClick={() => onDigitClick(number)} />
+      <CalculatorCell digit={number} key = {'Cell_' +number} onDigitClick={onDigitClick} />
       )
+
     return (
       <div className = 'CalculatorRow' >{list}</div>
     )
