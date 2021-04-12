@@ -12,6 +12,22 @@ const App = () => {
     reset: false
   })
 
+  const onDigitClick = async (value) => {
+    if(clearInput.reset){
+      setInput({input: value})
+      setClearInput({reset: false})
+    }
+    if(value === '='){
+      calculate(input.input)
+    }else if(value === 'AC'){
+      setInput({input: ''})
+    }else if(!clearInput.reset){
+      setInput(prevState => ({
+        input: prevState.input + value,
+      }))
+    }
+  }
+
 
   const onDigitClick = (value) => {
     setInput(value)
