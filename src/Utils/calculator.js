@@ -214,7 +214,7 @@ const calculator = (input = '') => {
 // calculator("1 + 34.2 / 2") // 18.1
 // calculator("(4-2)*3.5 * (10 - 5)") // 35
 // calculator("4*5/2") // 10
-calculator("9/3*2*5/10") // 3
+// calculator("9/3*2*5/10") // 3
 // calculator('(9+3)(-10*2)') // 240
 // calculator("-5+-8--11*2") // 9
 // calculator("2+-+-4") //Invalid or Syntax Error
