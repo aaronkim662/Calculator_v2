@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './App.scss';
 import Calculator from './Utils/calculator';
 import CalculatorCell from './App/SharedComponents/CalculatorCell/CalculatorCell';
 
