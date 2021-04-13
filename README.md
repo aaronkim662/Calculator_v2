@@ -23,6 +23,7 @@ Write a calculator program. The program should let a user enter a math problem a
   - This app is comprised of two parts: the functionality (in `calculator.js`) and the front end (the entire app).
 
   - To run only the function part, navigate to the file `calculator.js` and comment out the last line `export default calculator;`. After go to your terminal and type `node src/utils/calculator.js`.
+  **Be sure to uncomment the line to run the entire app**
 
   - There are examples commented out for testing purposes, feel free to uncomment them out as you please.
 
