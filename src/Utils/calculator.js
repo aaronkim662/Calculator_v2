@@ -2,7 +2,7 @@
 // If these edge cases are met then return false, if not then return true
 const checkEdgeCases = (calcCheck = '') =>  {
   const alphabet = 'abcdefghijklmnopqrstuvwxyz';
-  const edgeCases = ['++', '+/', '/+', '+*', '*+', '-*', '-/', '**', '*/', '/*', '**', '//', '-+', '..'];
+  const edgeCases = ['++', '+/', '/+', '+*', '*+', '-*', '-/', '**', '*/', '/*', '**', '//', '-+', '..', '()'];
   const operations = ['+', '/', '*'];
   // check for single parenthesis
   if(calcCheck.includes('(') && !calcCheck.includes(')')){
