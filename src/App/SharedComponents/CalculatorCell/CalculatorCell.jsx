@@ -25,8 +25,10 @@ const CalculatorCell = (props) => {
   }
 
   return (
-    <div id = {'Cell_' + digit.digit} className = 'CalculatorCell' onClick = {() => props.onDigitClick(digit.digit)}>
-      {digit.digit}
+    <div className = {setClasses(digit.digit)} onClick = {() => props.onDigitClick(digit.digit)}>
+      <div className = {'Cell' + digit.digit}>
+        {digit.digit}
+      </div>
     </div>
   )
 }
