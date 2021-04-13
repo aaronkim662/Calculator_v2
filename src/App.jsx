@@ -60,15 +60,16 @@ const App = () => {
 
   return (
     <div className="App">
-      <div>Calculator</div>
-      <input value = {input.input} type = 'text' onChange={handleChange} onKeyDown={handleKeyDown} placeholder='0'/>
+      <div className = 'CalculatorTitle'>Calculator</div>
+      <input className = 'CalculatorInput' value = {input.input} type = 'text' onChange={handleChange} onKeyDown={handleKeyDown} placeholder='0'/>
       <div className = 'Calculator'>
-        {cells(['(', ')', '' , 'AC'])}
+        {cells(['(', ')', ' ' , 'AC'])}
         {cells(['7', '8', '9', '/'])}
         {cells(['4', '5', '6', '*'])}
         {cells(['1', '2', '3', '-'])}
         {cells(['0', '.', '=', '+'])}
       </div>
+      <div id='footer'>Made by Aaron Kim</div>
     </div>
   );
 }
