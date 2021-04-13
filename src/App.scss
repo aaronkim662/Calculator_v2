@@ -1,3 +1,5 @@
+// @import '~styles/_colors.scss';
+
 .App {
   text-align: center;
 }
@@ -26,6 +28,12 @@
 
 .App-link {
   color: #61dafb;
+}
+
+.CalculatorRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 @keyframes App-logo-spin {
