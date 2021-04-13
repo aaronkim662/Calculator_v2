@@ -176,6 +176,10 @@ const pemdas = (calcArray = [], ) => {
 };
 
 // This method is for solving inner parenthesis wihtin parenthesis
+// The way I was appraoching this part was to iterate and find ( , )
+// Any numbers in between we push to a new array
+// Until we hit ), we solve and insert it
+// If there is a ( in between we reset the new array
 // const innerParens = (calcInput = []) => {
 //   let newCalcInput = calcInput
 //   let startSearch = true;
