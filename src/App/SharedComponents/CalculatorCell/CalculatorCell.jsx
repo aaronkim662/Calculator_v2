@@ -2,7 +2,7 @@ import React from 'react';
 import './CalculatorCell.scss'
 
 const CalculatorCell = (props) => {
-  const [digit, setDigit] = React.useState({
+  const [digit] = React.useState({
     digit: props.digit.toString()
   });
 
