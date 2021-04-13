@@ -17,6 +17,11 @@ const App = () => {
       setInput({input: value})
       setClearInput({reset: false})
     }
+
+    if(value === ' '){
+      value = ''
+    }
+
     if(value === '='){
       calculate(input.input)
     }else if(value === 'AC'){
