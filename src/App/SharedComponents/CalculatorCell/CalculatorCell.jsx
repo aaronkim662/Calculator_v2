@@ -12,7 +12,7 @@ const CalculatorCell = (props) => {
     if(numbers.includes(value)){
       classes += ' CellNumbers'
     }
-    if(value === '(' || value === ')' || value === " " || value === 'AC' || value === '*' || value === '/' || value === '-' || value === '+'){
+    if(value === '(' || value === ')' || value === " " || value === '*' || value === '/' || value === '-' || value === '+'){
       classes += ' CellUpperLevel'
     }
     if(value === '='){
@@ -20,6 +20,9 @@ const CalculatorCell = (props) => {
     }
     if(value === '.'){
       classes += ' CellDecimal'
+    }
+    if(value === 'AC'){
+      classes += ' CellUpperLevel CellAllClear'
     }
     return classes
   }
