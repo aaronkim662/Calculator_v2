@@ -175,6 +175,28 @@ const pemdas = (calcArray = [], ) => {
   return calcArray[0];
 };
 
+// This method is for solving inner parenthesis wihtin parenthesis
+// const innerParens = (calcInput = []) => {
+//   let newCalcInput = calcInput
+//   let startSearch = true;
+//   let innerCalc = []
+//   let
+//   console.log('inner', calcInput)
+//   for(let rightBracket = 0; rightBracket < calcInput.length; rightBracket++){
+//     if(calcInput[rightBracket] === '('){
+//       innerCalc.push(calcInput[rightBracket])
+//     }
+//     for(let leftBracket = 1; leftBracket < calcInput.length; leftBracket++){
+//       if(calcInput[i] === '('){
+//         innerCalc = []
+//       }else if(calcInput[i] === ')'){
+//         innerCalc.push(calcInput[i])
+
+//       }
+//     }
+//   }
+// }
+
 const calculator = (input = '') => {
   if(input === ''){
     return '';
@@ -231,4 +253,6 @@ const calculator = (input = '') => {
 // calculator("19 + cinnamon") //Invalid or Syntax Error
 
 // comment out code below to run this as its own
+// Currently this app does not handle mutliple parenthesis within parenthesis
+//
 export default calculator;
