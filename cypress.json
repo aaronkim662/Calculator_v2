@@ -1,0 +1,11 @@
+{
+  "baseUrl": "http://localhost:3000",
+  "viewportWidth": 1280,
+  "viewportHeight": 800,
+  "video": false,
+  "retries": 2,
+  "defaultCommandTimeout": 10000,
+  "numTestsKeptInMemory": 10,
+  "userAgent": "Cypress",
+  "watchForFileChanges": true
+}
