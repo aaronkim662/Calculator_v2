@@ -1,13 +1,24 @@
 .CalculatorCell {
-  /* display: flex; */
-  /* justify-content: center; */
-  width: 20px;
-  height: 30px;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  width: 60px;
+  height: 60px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
   border-style: groove;
   border-radius: 5px;
+  border-width: thin;
   box-sizing: border-box;
+}
+
+.CellEquals {
+  display: block;
+  background-color: #1E90FF;
+  color: white;
+  margin: auto;
+  text-align: center;
+}
+
+.CellUpperLevel {
+  background-color: #D3D3D3;
 }
