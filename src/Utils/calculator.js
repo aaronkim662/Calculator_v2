@@ -100,7 +100,8 @@ const formatParens = (calcInput = []) => {
 // Format negative numbers by prepending them next to the following number
 const formatNegative = (calcInput = []) => {
   for(let i = 0; i < calcInput.length; i++){
-    if(calcInput[i] === '-' && !isNaN(parseInt(calcInput[i+1])) && typeof parseInt(calcInput[i+1]) === 'number'){
+    // check if the first value is a negative and the next value is a number
+    if(calcInput[i] === '-' && (!isNaN(parseInt(calcInput[i+1])) || !isNaN(parseFloat(calcInput[i+1]))) && typeof parseInt(calcInput[i+1]) === 'number'){
       calcInput.splice(i, 2, `-${calcInput[i+1]}`)
     }
   }
@@ -250,6 +251,7 @@ const calculator = (input = '') => {
 // calculator("1 + 34.2 / 2") // 18.1
 // calculator("(4-2)*3.5 * (10 - 5)") // 35
 // calculator("4*5/2") // 10
+// calculator("-.32       /.5") // 0.64
 // calculator("9/3*2*5/10") // 3
 // calculator('(9+3)(-10*2)') // 240
 // calculator("-5+-8--11*2") // 9
