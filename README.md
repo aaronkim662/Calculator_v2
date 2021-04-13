@@ -37,7 +37,8 @@ Write a calculator program. The program should let a user enter a math problem a
 
   4. Supports parentheses.
 
+# Cypress Testing
 
+  - To run `calculator_spec.coffee`, in your terminal type `npx cypress open`
 
-
-
+  - Cypress UI will pop up. Click on the file.
