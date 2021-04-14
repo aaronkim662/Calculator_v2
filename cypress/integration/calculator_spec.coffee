@@ -28,6 +28,9 @@ describe 'Calculator', ->
       PAGE.getResult('1 + 34.2 / 2', '18.1')
       PAGE.getResult('1 + 2.5 * 30', '76')
 
+    it 'Returns Number if there is only a Number', ->
+      PAGE.getResult('950', '950')
+
   context 'Handles Errors', ->
     error = 'Syntax Error'
     it 'Returns an Error For Letters', ->
@@ -38,12 +41,15 @@ describe 'Calculator', ->
       edgeCases.forEach (edge) =>
         PAGE.getResult("1 + 2 + 3 #{edge} 5 *9", error)
 
-    it 'Returns an Error for operations at the beginning and end', ->
+    it 'Returns an Error for Operations at the Beginning and End', ->
       operations = ['+', '/', '*']
       operations.forEach (op) =>
         PAGE.getResult("#{op} 1 + 5", error)
         PAGE.getResult("1 + 5 #{op}", error)
         PAGE.getResult('1 + 5 -', error)
+
+    it 'Returns an Error for Multiple Decimals', ->
+      PAGE.getResult('1 + 2 + 2.42.4', error)
 
   context 'Example Test Cases', ->
     it 'Returns 3', ->
