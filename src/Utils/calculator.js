@@ -241,6 +241,10 @@ const calculator = (input = '') => {
     console.log('Syntax Error')
     return 'Syntax Error'
   }
+
+  if(checkSingleNumber(input)){
+    return input
+  }
   // replace double negatives with a +
   let format = input.replace(/--/g, '+');
   // split elements into an array
@@ -249,6 +253,10 @@ const calculator = (input = '') => {
   newInput = formatNegative(newInput);
   // format the parenthesis
   newInput = formatParens(newInput);
+
+  if(!checkMultipleDecimals(newInput)) {
+    return 'Syntax Error'
+  }
 
   // do calculations within parenthesis first
   while(startParens){
