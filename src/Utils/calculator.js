@@ -49,6 +49,19 @@ const checkMultipleDecimals = (calcInput = []) => {
 
 // checkMultipleDecimals([ '1', '+', '2.5.2', '*', '30' ])
 
+const checkSingleNumber = (calcInput = '') => {
+  const splitInput = calcInput.split('');
+  let singleNumber = 0
+  for(let i = 0; i < calcInput.length; i++){
+    if(typeof parseFloat(calcInput[i]) === 'number' && !isNaN(parseFloat(calcInput[i]))){
+      singleNumber = splitInput.join('')
+    }else{
+      return false
+    }
+  }
+  return singleNumber
+}
+
 // Split elements into an array
 const splitElements = (calcInput = '') => {
   let digits = '0123456789.';
