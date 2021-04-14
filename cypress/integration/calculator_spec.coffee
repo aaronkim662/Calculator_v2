@@ -8,7 +8,7 @@ describe 'Calculator', ->
   before ->
     cy.visit '/'
 
-  context 'Does Operations', ->
+  context.only 'Does Operations', ->
     it 'Adds Numbers', ->
       PAGE.getResult('2+3', '5')
 
@@ -30,6 +30,9 @@ describe 'Calculator', ->
 
     it 'Returns Number if there is only a Number', ->
       PAGE.getResult('950', '950')
+
+    it 'Returns Result for Quoted Input', ->
+      PAGE.getResult('"1 + 2"', '3')
 
   context 'Handles Errors', ->
     error = 'Syntax Error'
