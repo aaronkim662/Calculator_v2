@@ -8,7 +8,7 @@ describe 'Calculator', ->
   before ->
     cy.visit '/'
 
-  context.only 'Does Operations', ->
+  context 'Does Operations', ->
     it 'Adds Numbers', ->
       PAGE.getResult('2+3', '5')
 
