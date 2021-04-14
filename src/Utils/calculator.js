@@ -38,6 +38,17 @@ const checkEdgeCases = (calcCheck = '') =>  {
 // checkEdgeCases('..5+2') // False
 // checkEdgeCases('5+2 ** 7') // False
 
+const checkMultipleDecimals = (calcInput = []) => {
+  for(let i = 0; i < calcInput.length; i++){
+    if(calcInput[i].split('.').length > 2){
+      return false
+    }
+  }
+  return true
+}
+
+// checkMultipleDecimals([ '1', '+', '2.5.2', '*', '30' ])
+
 // Split elements into an array
 const splitElements = (calcInput = '') => {
   let digits = '0123456789.';
