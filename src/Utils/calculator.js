@@ -238,7 +238,7 @@ const calculator = (input = '') => {
 
   // check for edge cases first
   if(!invalidInput){
-    console.log('Syntax Error')
+    // console.log('Syntax Error')
     return 'Syntax Error'
   }
 
@@ -273,7 +273,7 @@ const calculator = (input = '') => {
 
   // do remaining calculations
   calculation = pemdas(newInput);
-  console.log(calculation);
+  // console.log(calculation);
   return calculation;
 }
 
