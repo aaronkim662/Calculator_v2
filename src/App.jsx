@@ -12,7 +12,7 @@ const App = () => {
     reset: false
   })
 
-  const onDigitClick = async (value) => {
+  const onDigitClick = (value) => {
     if(clearInput.reset){
       setInput({input: value})
       setClearInput({reset: false})
@@ -23,7 +23,9 @@ const App = () => {
     }
 
     if(value === '='){
-      calculate(input.input)
+      let evaluation = input.input.replace(/['"]+/g, '')
+      console.log(evaluation)
+      calculate(evaluation)
     }else if(value === 'AC'){
       setInput({input: ''})
     }else if(!clearInput.reset){
