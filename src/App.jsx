@@ -24,7 +24,6 @@ const App = () => {
 
     if(value === '='){
       let evaluation = input.input.replace(/['"]+/g, '')
-      console.log(evaluation)
       calculate(evaluation)
     }else if(value === 'AC'){
       setInput({input: ''})
