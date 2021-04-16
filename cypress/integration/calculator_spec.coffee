@@ -30,7 +30,6 @@ describe 'Calculator', ->
       PAGE.getResult('1 + 34.2 / 2', '18.1')
       PAGE.getResult('1 + 2.5 * 30', '76')
 
-
     it 'Returns Number if there is only a Number', ->
       PAGE.getResult('950', '950')
 
