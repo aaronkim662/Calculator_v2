@@ -23,10 +23,13 @@ describe 'Calculator', ->
 
     it 'Handles Parenthesis Multiplication', ->
       PAGE.getResult('(9+3)(-10*2)', '-240')
+      PAGE.getResult('9+5(1+4)', '34')
+      PAGE.getResult('(1 + 3)10', '40')
 
     it 'Handes Decimals', ->
       PAGE.getResult('1 + 34.2 / 2', '18.1')
       PAGE.getResult('1 + 2.5 * 30', '76')
+
 
     it 'Returns Number if there is only a Number', ->
       PAGE.getResult('950', '950')
