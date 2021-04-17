@@ -297,5 +297,5 @@ const calculator = (input = '') => {
 
 // comment out code below to run this as its own
 // Currently this app does not handle mutliple parenthesis within parenthesis
-//
+
 export default calculator;
