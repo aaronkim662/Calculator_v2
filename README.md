@@ -8,7 +8,7 @@ Write a calculator program. The program should let a user enter a math problem a
 
   2. Make sure to have node.js downloaded.
 
-  3. Cd into the vidMob-app directory and type `npm install` to install the required dependencies.
+  3. Cd into the directory and type `npm install` to install the required dependencies.
 
   4. Start the app with `npm start`. If your chrome is open, a new tab should automatically open. If not open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
