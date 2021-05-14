@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.scss';
 import Calculator from './Utils/calculator';
-import CalculatorCell from './App/SharedComponents/CalculatorCell/CalculatorCell';
+import CalculatorCell from './App/Components/CalculatorCell/Cell';
 
 const App = () => {
   const [input, setInput] = React.useState({
