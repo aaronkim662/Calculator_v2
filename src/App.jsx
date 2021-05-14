@@ -75,7 +75,6 @@ const App = () => {
         {cells(['1', '2', '3', '-'])}
         {cells(['0', '.', '=', '+'])}
       </div>
-      <div id='footer'>Made by Aaron Kim</div>
     </div>
   );
 }
